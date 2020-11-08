@@ -23,7 +23,7 @@ def get_yolo_result(image: np.ndarray):
     image_height = image.shape[0]
     image_width = image.shape[1]
 
-    blob = cv2.dnn.blobFromImage(image, scale, (416, 416), (0, 0, 0), True, crop=False)
+    blob = cv2.dnn.blobFromImage(image, scale, (416, 416), (0, 0, 0), swapRB=True, crop=False)
     boxes = []
     confidences = []
     class_ids = []

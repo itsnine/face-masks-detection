@@ -58,13 +58,6 @@ def draw_prediction(image: np.ndarray, class_id: int, confidence: float, box: li
     cv2.putText(image, label, (x + 5, y - 5), cv2.FONT_ITALIC, 0.6, (255, 255, 255), 1, cv2.LINE_AA)
     return image
 
-def convert_box_to_points(box: list):
-    box = list(map(round, box))
-    x, y, w, h = box
-    point_1 = (x, y)
-    point_2 = (x + w, y + h)
-    return point_1, point_2
-
 def main():
     while True:
         _, frame = cap.read()
